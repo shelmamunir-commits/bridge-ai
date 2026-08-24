@@ -21,7 +21,7 @@ export default function Articles() {
 
   return (
     <motion.div initial={{ opacity: 0, y: 8 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.35 }}>
-      <h1 className="text-2xl sm:text-3xl font-bold text-slate-900 dark:text-white">Perpustakaan Psikoedukasi</h1>
+      <h1 className="text-2xl sm:text-3xl font-bold text-slate-900 dark:text-white">Ruang Paham</h1>
       <p className="mt-2 text-[14.5px] text-slate-500 dark:text-slate-400 leading-relaxed">
         Materi yang mudah dipahami untuk membantumu mengenali dan merawat kesehatan mentalmu.
       </p>

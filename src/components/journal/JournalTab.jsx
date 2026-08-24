@@ -1,17 +1,17 @@
 import { useState } from 'react'
 import { motion, AnimatePresence } from 'framer-motion'
 import { Plus, Trash2, Check, ChevronDown } from 'lucide-react'
-import Button from '../components/ui/Button.jsx'
-import Card from '../components/ui/Card.jsx'
-import SectionLabel from '../components/ui/SectionLabel.jsx'
-import MoodPicker from '../components/mood/MoodPicker.jsx'
-import { useJournal } from '../context/JournalContext.jsx'
-import { MOODS, MOOD_LABELS } from '../lib/constants.js'
-import { cn } from '../lib/cn.js'
+import Button from '../ui/Button.jsx'
+import Card from '../ui/Card.jsx'
+import SectionLabel from '../ui/SectionLabel.jsx'
+import MoodPicker from '../mood/MoodPicker.jsx'
+import { useJournal } from '../../context/JournalContext.jsx'
+import { MOODS, MOOD_LABELS } from '../../lib/constants.js'
+import { cn } from '../../lib/cn.js'
 
 const DATE_FMT = { weekday: 'short', day: 'numeric', month: 'short' }
 
-export default function Journal() {
+export default function JournalTab() {
   const { entries, addEntry, removeEntry } = useJournal()
   const [mood, setMood] = useState(null)
   const [gratitude, setGratitude] = useState(['', '', ''])
@@ -41,9 +41,8 @@ export default function Journal() {
   const removeRow = (i) => setSchedule((s) => s.filter((_, j) => j !== i))
 
   return (
-    <motion.div initial={{ opacity: 0, y: 8 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.35 }}>
-      <h1 className="text-2xl sm:text-3xl font-display text-slate-800 dark:text-slate-100">Jurnal harian</h1>
-      <p className="mt-2 text-[14.5px] text-slate-500 dark:text-slate-400">Gimana perasaanmu hari ini?</p>
+    <div>
+      <p className="text-[14.5px] text-slate-500 dark:text-slate-400">Gimana perasaanmu hari ini?</p>
 
       <div className="mt-4">
         <MoodPicker value={mood} onChange={setMood} />
@@ -244,6 +243,6 @@ export default function Journal() {
           </div>
         </div>
       )}
-    </motion.div>
+    </div>
   )
 }

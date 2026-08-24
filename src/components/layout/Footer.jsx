@@ -23,7 +23,7 @@ export default function Footer() {
               <ul className="space-y-2 text-sm">
                 <li><Link to="/result" className="hover:text-white">Cek hasil skrining</Link></li>
                 <li><Link to="/screening" className="hover:text-white">Skrining mandiri</Link></li>
-                <li><Link to="/articles" className="hover:text-white">Perpustakaan artikel</Link></li>
+                <li><Link to="/articles" className="hover:text-white">Ruang Baca</Link></li>
                 <li><Link to="/mood" className="hover:text-white">Mood tracker</Link></li>
                 <li><Link to="/journal" className="hover:text-white">Jurnal harian</Link></li>
                 <li><Link to="/breathing" className="hover:text-white">Latihan napas</Link></li>

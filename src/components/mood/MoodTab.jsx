@@ -1,15 +1,14 @@
 import { useState } from 'react'
-import { motion } from 'framer-motion'
-import Card from '../components/ui/Card.jsx'
-import SectionLabel from '../components/ui/SectionLabel.jsx'
-import MoodPicker from '../components/mood/MoodPicker.jsx'
-import MoodCalendar, { dateKey } from '../components/mood/MoodCalendar.jsx'
-import MoodTrendChart from '../components/charts/MoodTrendChart.jsx'
-import { useMood } from '../context/MoodContext.jsx'
-import { MOODS, MOOD_LABELS } from '../lib/constants.js'
-import { weeklySummary } from '../engine/insights.js'
+import Card from '../ui/Card.jsx'
+import SectionLabel from '../ui/SectionLabel.jsx'
+import MoodPicker from './MoodPicker.jsx'
+import MoodCalendar, { dateKey } from './MoodCalendar.jsx'
+import MoodTrendChart from '../charts/MoodTrendChart.jsx'
+import { useMood } from '../../context/MoodContext.jsx'
+import { MOODS, MOOD_LABELS } from '../../lib/constants.js'
+import { weeklySummary } from '../../engine/insights.js'
 
-export default function MoodTracker() {
+export default function MoodTab() {
   const { entries, setMood } = useMood()
   const now = new Date()
   const todayKey = dateKey(now.getFullYear(), now.getMonth(), now.getDate())
@@ -34,12 +33,7 @@ export default function MoodTracker() {
   const selLabel = selected === todayKey ? 'Hari ini' : selected
 
   return (
-    <motion.div initial={{ opacity: 0, y: 8 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.35 }}>
-      <h1 className="text-2xl sm:text-3xl font-display text-slate-800 dark:text-slate-100">Mood tracker</h1>
-      <p className="mt-2 text-[14.5px] text-slate-500 dark:text-slate-400 leading-relaxed">
-        Catat mood kamu tiap hari dan lihat polanya dari waktu ke waktu.
-      </p>
-
+    <div>
       <div className="grid grid-cols-1 lg:grid-cols-2 gap-4 mt-6">
         <Card>
           <SectionLabel>Kalender</SectionLabel>
@@ -83,6 +77,6 @@ export default function MoodTracker() {
           </p>
         )}
       </Card>
-    </motion.div>
+    </div>
   )
 }

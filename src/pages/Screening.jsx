@@ -23,8 +23,15 @@ export default function Screening() {
           >
             <span className="text-3xl">{q.icon}</span>
             <div className="flex-1 min-w-0">
-              <div className="font-bold text-slate-900 dark:text-white group-hover:text-brand-deep dark:group-hover:text-brand">
-                {q.title}
+              <div className="flex items-center gap-2">
+                <div className="font-bold text-slate-900 dark:text-white group-hover:text-brand-deep dark:group-hover:text-brand">
+                  {q.title}
+                </div>
+                {q.type === 'phq4' && (
+                  <span className="inline-block text-[9.5px] font-extrabold uppercase tracking-wider bg-emerald-100 dark:bg-emerald-500/15 text-emerald-700 dark:text-emerald-300 px-2 py-0.5 rounded-full whitespace-nowrap">
+                    Tervalidasi
+                  </span>
+                )}
               </div>
               <p className="mt-1 text-[12.5px] text-slate-500 dark:text-slate-400 leading-relaxed">{q.desc}</p>
               <div className="mt-2 text-[11px] text-slate-400">{q.questions.length} pertanyaan · ±2 menit</div>

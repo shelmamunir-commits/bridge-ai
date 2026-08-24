@@ -1,8 +1,9 @@
 import { Link } from 'react-router-dom'
 import { motion } from 'framer-motion'
-import { Phone, ArrowLeft } from 'lucide-react'
+import { Phone, ArrowLeft, MapPin } from 'lucide-react'
 import Card from '../components/ui/Card.jsx'
-import { HELP_LADDER, HOTLINE } from '../data/helpResources.js'
+import NearbyMap from '../components/help/NearbyMap.jsx'
+import { HELP_LADDER, HOTLINE, EMERGENCY_NUMBERS } from '../data/helpResources.js'
 
 export default function Help() {
   return (
@@ -46,6 +47,37 @@ export default function Help() {
           </button>
         </Link>
       </div>
+
+      <div className="mt-5">
+        <div className="text-[11px] font-extrabold uppercase tracking-wider text-slate-400 dark:text-slate-500 mb-3">
+          Nomor darurat
+        </div>
+        <div className="grid grid-cols-1 sm:grid-cols-3 gap-3">
+          {EMERGENCY_NUMBERS.map((n) => (
+            <a
+              key={n.number}
+              href={`tel:${n.number}`}
+              className="flex items-center gap-3 rounded-xl border border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-800/60 p-4 hover:border-brand dark:hover:border-brand transition"
+            >
+              <span className="w-10 h-10 rounded-lg bg-rose-50 dark:bg-rose-500/10 text-rose-500 flex items-center justify-center shrink-0">
+                <Phone size={18} />
+              </span>
+              <span>
+                <span className="block text-lg font-extrabold text-slate-900 dark:text-white">{n.number}</span>
+                <span className="block text-[12px] font-bold text-slate-600 dark:text-slate-300">{n.label}</span>
+              </span>
+            </a>
+          ))}
+        </div>
+      </div>
+
+      <Card className="mt-5">
+        <div className="flex items-center gap-2 mb-3">
+          <MapPin size={18} className="text-brand" />
+          <span className="font-bold text-slate-900 dark:text-white">Layanan terdekat di sekitarmu</span>
+        </div>
+        <NearbyMap />
+      </Card>
 
       <div className="mt-5 rounded-2xl border border-blue-200/60 dark:border-blue-500/30 bg-blue-50/60 dark:bg-blue-500/5 p-5 text-[12.5px] leading-relaxed text-slate-600 dark:text-slate-300">
         <b className="text-brand-deep dark:text-brand">Kenali tanda darurat:</b> pikiran untuk menyakiti diri atau

@@ -1,6 +1,50 @@
 export const LIKERT = ['Tidak pernah', 'Kadang-kadang', 'Sering', 'Hampir setiap hari']
 
+export const PHQ4_OPTIONS = ['Tidak pernah', 'Beberapa hari', 'Lebih dari separuh waktu', 'Hampir setiap hari']
+
+export const PHQ4_LEVELS = {
+  normal: {
+    label: 'Normal',
+    range: '0–2',
+    desc: 'Kamu tidak menunjukkan tanda-tanda tekanan psikologis yang signifikan. Gejala kecemasan atau kesedihan yang kamu rasakan berada dalam batas wajar dan belum mengganggu fungsi sosial dalam kehidupan sehari-hari.',
+  },
+  mild: {
+    label: 'Ringan',
+    range: '3–5',
+    desc: 'Muncul sedikit tekanan psikologis, namun masih dalam tahap awal atau ringan. Kamu mungkin sesekali merasa gugup, khawatir, atau murung. Gejala ini biasanya belum terlalu mengganggu, tetapi sudah mulai terasa tidak nyaman.',
+  },
+  moderate: {
+    label: 'Sedang',
+    range: '6–8',
+    desc: 'Tekanan psikologis berada pada tingkat sedang dan cukup bisa teramati oleh orang lain. Kamu mulai sering merasa cemas atau sedih. Biasanya kamu jadi sulit konsentrasi, serta pola tidur dan interaksi sosial terganggu.',
+  },
+  severe: {
+    label: 'Berat',
+    range: '9–12',
+    desc: 'Tekanan psikologis tingkat tinggi yang membutuhkan perhatian serius. Gejala kecemasan dan depresi terjadi hampir setiap hari dan sangat menguras energi. Kondisi ini umumnya sangat mengganggu kemampuan kamu untuk belajar atau menjalani aktivitas harian.',
+  },
+}
+
+export const PHQ4 = {
+  id: 'phq4',
+  type: 'phq4',
+  title: 'PHQ-4 · Skrining Tekanan Psikologis',
+  icon: '🩺',
+  domain: 'anxiety',
+  desc: 'Instrumen tervalidasi untuk mengukur tekanan psikologis (kecemasan & depresi) dalam 2 minggu terakhir.',
+  source: 'PHQ-4 (Kroenke et al., 2009)',
+  reference: 'https://saripediatri.org/index.php/sari-pediatri/article/view/3182',
+  options: PHQ4_OPTIONS,
+  questions: [
+    { text: 'Merasa gugup, cemas, atau gelisah.', subscale: 'anxiety' },
+    { text: 'Tidak bisa menghentikan atau mengendalikan rasa khawatir.', subscale: 'anxiety' },
+    { text: 'Sedikit minat atau kesenangan dalam melakukan sesuatu.', subscale: 'depression' },
+    { text: 'Merasa murung, tertekan, atau putus asa.', subscale: 'depression' },
+  ],
+}
+
 export const QUIZZES = [
+  PHQ4,
   {
     id: 'anxiety',
     title: 'Skrining Kecemasan',

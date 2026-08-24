@@ -1,4 +1,4 @@
-import { Routes, Route } from 'react-router-dom'
+import { Routes, Route, Navigate } from 'react-router-dom'
 import Layout from './components/layout/Layout.jsx'
 import Home from './pages/Home.jsx'
 import ResultInput from './pages/ResultInput.jsx'
@@ -9,8 +9,7 @@ import Actions from './pages/Actions.jsx'
 import Breathing from './pages/Breathing.jsx'
 import Help from './pages/Help.jsx'
 import Safety from './pages/Safety.jsx'
-import Journal from './pages/Journal.jsx'
-import MoodTracker from './pages/MoodTracker.jsx'
+import Wellbeing from './pages/Wellbeing.jsx'
 import Dashboard from './pages/Dashboard.jsx'
 import Screening from './pages/Screening.jsx'
 import Quiz from './pages/Quiz.jsx'
@@ -34,8 +33,9 @@ export default function App() {
         <Route path="/breathing" element={<Breathing />} />
         <Route path="/help" element={<Help />} />
         <Route path="/safety" element={<Safety />} />
-        <Route path="/journal" element={<Journal />} />
-        <Route path="/mood" element={<MoodTracker />} />
+        <Route path="/jurnal" element={<Wellbeing />} />
+        <Route path="/journal" element={<Navigate to="/jurnal" replace />} />
+        <Route path="/mood" element={<Navigate to="/jurnal?tab=tren" replace />} />
         <Route path="/dashboard" element={<Dashboard />} />
         <Route path="/screening" element={<Screening />} />
         <Route path="/quiz/:quizId" element={<Quiz />} />

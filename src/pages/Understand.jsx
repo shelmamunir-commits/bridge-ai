@@ -10,11 +10,13 @@ import DomainBars from '../components/charts/DomainBars.jsx'
 import { useApp } from '../context/AppContext.jsx'
 import { useTypewriter } from '../hooks/useTypewriter.js'
 import { CATEGORY_META } from '../lib/constants.js'
+import Phq4Result from '../components/result/Phq4Result.jsx'
 
 export default function Understand() {
   const { result, name } = useApp()
 
   if (!result) return <Navigate to="/result" replace />
+  if (result.phq4) return <Phq4Result result={result} name={name} />
 
   const meta = CATEGORY_META[result.category]
   const typed = useTypewriter(result.explain)

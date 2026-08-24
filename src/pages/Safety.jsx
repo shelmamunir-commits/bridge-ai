@@ -1,7 +1,9 @@
 import { Link } from 'react-router-dom'
 import { motion } from 'framer-motion'
-import { Siren, ArrowLeft } from 'lucide-react'
-import { EMERGENCY_STEPS, HOTLINE } from '../data/helpResources.js'
+import { Siren, ArrowLeft, MapPin } from 'lucide-react'
+import Card from '../components/ui/Card.jsx'
+import NearbyMap from '../components/help/NearbyMap.jsx'
+import { EMERGENCY_STEPS, HOTLINE, EMERGENCY_NUMBERS } from '../data/helpResources.js'
 
 export default function Safety() {
   return (
@@ -36,6 +38,33 @@ export default function Safety() {
           <div className="mt-6 rounded-2xl bg-slate-900 text-white p-5">
             <div className="text-2xl font-extrabold">{HOTLINE.number}</div>
             <div className="text-[12.5px] text-white/70">{HOTLINE.desc}</div>
+          </div>
+
+          <div className="mt-6">
+            <div className="text-[11px] font-extrabold uppercase tracking-wider text-slate-400 dark:text-slate-500 mb-3">
+              Nomor darurat
+            </div>
+            <div className="grid grid-cols-1 sm:grid-cols-3 gap-3">
+              {EMERGENCY_NUMBERS.map((n) => (
+                <a
+                  key={n.number}
+                  href={`tel:${n.number}`}
+                  className="rounded-xl border border-slate-200 dark:border-slate-700 p-4 hover:border-brand dark:hover:border-brand transition"
+                >
+                  <div className="text-xl font-extrabold text-slate-900 dark:text-white">{n.number}</div>
+                  <div className="text-[13px] font-bold text-slate-600 dark:text-slate-300">{n.label}</div>
+                  <div className="text-[11.5px] text-slate-400 dark:text-slate-500">{n.desc}</div>
+                </a>
+              ))}
+            </div>
+          </div>
+
+          <div className="mt-6">
+            <div className="flex items-center gap-2 mb-3">
+              <MapPin size={18} className="text-rose-500" />
+              <span className="font-bold text-slate-900 dark:text-white">Layanan terdekat di sekitarmu</span>
+            </div>
+            <NearbyMap />
           </div>
 
           <div className="mt-5 rounded-2xl border border-rose-200/70 dark:border-rose-500/30 bg-rose-50/70 dark:bg-rose-500/10 p-5 text-[12.5px] leading-relaxed text-rose-700 dark:text-rose-300">

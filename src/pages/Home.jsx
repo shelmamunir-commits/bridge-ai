@@ -15,11 +15,11 @@ import { dateKey } from '../components/mood/MoodCalendar.jsx'
 
 const FEATURES = [
   { icon: FileSearch, color: '#40ae87', bg: '#e1fbfa', t: 'Pahami Hasil Skrining', d: 'AI menerjemahkan hasil CKG jadi bahasa yang mudah dipahami — tanpa diagnosis.', to: '/result' },
-  { icon: Route, color: '#3899fe', bg: '#ebf3ff', t: 'Jalur Psikoedukasi Personal', d: 'Urutan materi yang pas dengan kondisi dan kebutuhanmu.', to: '/personalize' },
+  { icon: Route, color: '#3899fe', bg: '#ebf3ff', t: 'My Journey', d: 'Urutan materi yang pas dengan kondisi dan kebutuhanmu.', to: '/personalize' },
   { icon: HeartPulse, color: '#f1487c', bg: '#feedf2', t: 'Aktivitas & Latihan 5 Menit', d: 'Latihan napas, grounding, dan aktivitas kecil yang bisa langsung dicoba.', to: '/breathing' },
-  { icon: NotebookPen, color: '#7a5af8', bg: '#f2effe', t: 'Mood Tracker & Jurnal', d: 'Catat mood harian, tulis jurnal syukur, lihat polanya.', to: '/mood' },
+  { icon: NotebookPen, color: '#7a5af8', bg: '#f2effe', t: 'Mood Tracker & Jurnal', d: 'Catat mood harian, tulis jurnal syukur, lihat polanya.', to: '/jurnal' },
   { icon: ClipboardList, color: '#f5a623', bg: '#fef6e7', t: 'Skrining Mandiri', d: 'Cek kecemasan, mood, stres, tidur, dan beban belajar.', to: '/screening' },
-  { icon: BookOpen, color: '#40ae87', bg: '#e1fbfa', t: 'Perpustakaan Artikel', d: 'Materi psikoedukasi berbasis referensi, bisa dicari.', to: '/articles' },
+  { icon: BookOpen, color: '#40ae87', bg: '#e1fbfa', t: 'Ruang Paham', d: 'Materi psikoedukasi berbasis referensi, bisa dicari.', to: '/articles' },
   { icon: MessageCircle, color: '#3899fe', bg: '#ebf3ff', t: 'Asisten AI', d: 'Ngobrol tentang kondisimu dan dapat saran langkah awal.', chat: true },
   { icon: Users, color: '#7a5af8', bg: '#f2effe', t: 'Ruang Cerita', d: 'Berbagi dan saling dukung secara anonim.', to: '/komunitas' },
 ]
@@ -61,24 +61,23 @@ export default function Home() {
         <BridgeArt />
         <div className="relative z-10 max-w-2xl mx-auto">
           <span className="inline-block text-[11px] font-extrabold uppercase tracking-widest bg-white/15 rounded-full px-3 py-1.5 mb-5">
-            BRIDGE-AI · Kesehatan Mental Remaja
+            Bridge-AI · Kesehatan Mental Remaja
           </span>
           <h1 className="text-3xl sm:text-[2.6rem] leading-[1.15] font-extrabold">
-            Hasil skriningmu adalah solusi psikologismu.
+            Pahami Dirimu, Temukan Langkahmu.
           </h1>
           <p className="mt-4 text-[15px] leading-relaxed text-white/90">
-            BRIDGE-AI menjembatani hasil skrining kesehatan (CKG) dengan langkah nyata: pahami hasilmu, dapat jalur
-            psikoedukasi yang pas buat kamu, dan tahu harus ke mana kalau butuh bantuan.
+            Bridge-AI menjembatani hasil skrining kesehatan (CKG) dengan langkah nyata. Ayo pahami dirimu, temukan langkahmu dan cari bantuan sesuai kebutuhanmu. Kamu tidak sendirian, mari bertumbuh bersama-sama.
           </p>
           <div className="mt-7 flex flex-wrap justify-center gap-3">
             <Link to="/result">
               <Button variant="white">
-                Masukkan kode hasil CKG <ArrowRight size={16} />
+                Masukkan Kode Hasil CKG <ArrowRight size={16} />
               </Button>
             </Link>
             <Link to="/screening">
               <button className="inline-flex items-center gap-2 rounded-full border border-white/40 text-white text-sm font-semibold px-6 py-3 hover:bg-white/10 transition">
-                Skrining mandiri
+                Skrining Mandiri
               </button>
             </Link>
           </div>

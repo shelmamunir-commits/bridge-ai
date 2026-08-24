@@ -6,7 +6,7 @@ import Card from '../components/ui/Card.jsx'
 import Button from '../components/ui/Button.jsx'
 import { useApp } from '../context/AppContext.jsx'
 import { QUIZZES, LIKERT } from '../data/quizzes.js'
-import { scoreQuiz } from '../engine/quizEngine.js'
+import { scoreQuiz, scorePhq4 } from '../engine/quizEngine.js'
 import { cn } from '../lib/cn.js'
 
 export default function Quiz() {
@@ -22,6 +22,7 @@ export default function Quiz() {
 
   const total = quiz.questions.length
   const q = quiz.questions[idx]
+  const options = quiz.options || LIKERT
 
   const choose = (i) => setSelected(i)
 
@@ -31,7 +32,7 @@ export default function Quiz() {
     setAnswers(newAnswers)
     setSelected(null)
     if (idx + 1 >= total) {
-      const analysis = scoreQuiz(quiz, newAnswers)
+      const analysis = quiz.type === 'phq4' ? scorePhq4(quiz, newAnswers) : scoreQuiz(quiz, newAnswers)
       submitQuizResult(analysis)
       navigate('/understand')
     } else {
@@ -63,7 +64,7 @@ export default function Quiz() {
           <Card className="mt-6">
             <p className="text-[15px] font-semibold text-slate-800 dark:text-slate-100 leading-relaxed">{q.text}</p>
             <div className="mt-5 space-y-2">
-              {LIKERT.map((l, i) => (
+              {options.map((l, i) => (
                 <button
                   key={i}
                   onClick={() => choose(i)}
