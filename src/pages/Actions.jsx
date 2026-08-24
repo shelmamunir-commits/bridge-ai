@@ -1,7 +1,7 @@
 import { useState } from 'react'
 import { Link, Navigate } from 'react-router-dom'
 import { motion, AnimatePresence } from 'framer-motion'
-import { ChevronDown, Wind, ThumbsUp, ThumbsDown } from 'lucide-react'
+import { ChevronDown, Wind, Headphones, ThumbsUp, ThumbsDown } from 'lucide-react'
 import Button from '../components/ui/Button.jsx'
 import { useApp } from '../context/AppContext.jsx'
 import { MODULES } from '../data/modules.js'
@@ -155,6 +155,11 @@ export default function Actions() {
         <Link to="/breathing">
           <Button variant="secondary">
             <Wind size={16} /> Coba latihan napas
+          </Button>
+        </Link>
+        <Link to="/meditasi">
+          <Button variant="secondary">
+            <Headphones size={16} /> Meditasi terpandu
           </Button>
         </Link>
         <Link to="/help">

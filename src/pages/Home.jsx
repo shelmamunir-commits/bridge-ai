@@ -2,7 +2,7 @@ import { Link } from 'react-router-dom'
 import { motion } from 'framer-motion'
 import {
   ArrowRight, FileSearch, Route, HeartPulse, NotebookPen, Bell,
-  ClipboardList, BookOpen, MessageCircle, Users, CalendarHeart, LayoutDashboard,
+  ClipboardList, BookOpen, MessageCircle, Users, CalendarHeart, LayoutDashboard, Headphones,
 } from 'lucide-react'
 import Button from '../components/ui/Button.jsx'
 import DailyCheckIn from '../components/home/DailyCheckIn.jsx'
@@ -17,6 +17,7 @@ const FEATURES = [
   { icon: FileSearch, color: '#40ae87', bg: '#e1fbfa', t: 'Pahami Hasil Skrining', d: 'AI menerjemahkan hasil CKG jadi bahasa yang mudah dipahami — tanpa diagnosis.', to: '/result' },
   { icon: Route, color: '#3899fe', bg: '#ebf3ff', t: 'My Journey', d: 'Urutan materi yang pas dengan kondisi dan kebutuhanmu.', to: '/personalize' },
   { icon: HeartPulse, color: '#f1487c', bg: '#feedf2', t: 'Aktivitas & Latihan 5 Menit', d: 'Latihan napas, grounding, dan aktivitas kecil yang bisa langsung dicoba.', to: '/breathing' },
+  { icon: Headphones, color: '#40ae87', bg: '#e1fbfa', t: 'Meditasi Terpandu', d: 'Sesi meditasi bersuara yang disesuaikan dengan kondisimu.', to: '/meditasi' },
   { icon: NotebookPen, color: '#7a5af8', bg: '#f2effe', t: 'Mood Tracker & Jurnal', d: 'Catat mood harian, tulis jurnal syukur, lihat polanya.', to: '/jurnal' },
   { icon: ClipboardList, color: '#f5a623', bg: '#fef6e7', t: 'Skrining Mandiri', d: 'Cek kecemasan, mood, stres, tidur, dan beban belajar.', to: '/screening' },
   { icon: BookOpen, color: '#40ae87', bg: '#e1fbfa', t: 'Ruang Paham', d: 'Materi psikoedukasi berbasis referensi, bisa dicari.', to: '/articles' },
@@ -123,7 +124,7 @@ export default function Home() {
         </p>
       </div>
 
-      <div className="mt-8 grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-4 gap-4">
+      <div className="mt-8 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
         {FEATURES.map((f) => {
           const cardCls =
             'rounded-xl bg-white dark:bg-slate-800/60 border border-slate-200 dark:border-slate-700 p-6 text-center hover:shadow-md hover:border-brand dark:hover:border-brand transition'

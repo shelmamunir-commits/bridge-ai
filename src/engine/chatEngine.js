@@ -97,10 +97,22 @@ export function chatReply(userText, context = {}) {
       ],
     }
 
-  if (matchAny(t, ['napas', 'breathing', 'meditasi', 'relaks', 'tenang', 'rileks']))
+  if (matchAny(t, ['meditasi', 'relaks', 'rileks', 'tenang', 'relaksasi', 'pandu']))
+    return {
+      text: 'Ada sesi Meditasi Terpandu yang bisa membantumu — lengkap dengan pemandu suara, panduan napas, dan suara latar. Kamu juga bisa ngobrol denganku lewat suara.',
+      actions: [
+        { label: 'Buka Meditasi Terpandu', to: '/meditasi' },
+        { label: 'Latihan napas cepat', to: '/breathing' },
+      ],
+    }
+
+  if (matchAny(t, ['napas', 'breathing']))
     return {
       text: 'Latihan napas 4-7-8 itu cara cepat menenangkan tubuh: tarik napas 4 detik, tahan 7 detik, hembuskan 8 detik. Mau kucoba pandu?',
-      actions: [{ label: 'Mulai latihan napas', to: '/breathing' }],
+      actions: [
+        { label: 'Mulai latihan napas', to: '/breathing' },
+        { label: 'Meditasi terpandu', to: '/meditasi' },
+      ],
     }
 
   if (matchAny(t, ['bantuan', 'psikolog', 'konselor', 'konseling', 'guru bk', 'dokter', 'terapi']))

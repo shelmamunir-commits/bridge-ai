@@ -27,6 +27,7 @@ export default function Footer() {
                 <li><Link to="/mood" className="hover:text-white">Mood tracker</Link></li>
                 <li><Link to="/journal" className="hover:text-white">Jurnal harian</Link></li>
                 <li><Link to="/breathing" className="hover:text-white">Latihan napas</Link></li>
+                <li><Link to="/meditasi" className="hover:text-white">Meditasi terpandu</Link></li>
                 <li><Link to="/chat" className="hover:text-white">Asisten AI</Link></li>
               </ul>
             </div>

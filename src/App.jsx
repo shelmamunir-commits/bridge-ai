@@ -7,6 +7,7 @@ import Personalize from './pages/Personalize.jsx'
 import Pathway from './pages/Pathway.jsx'
 import Actions from './pages/Actions.jsx'
 import Breathing from './pages/Breathing.jsx'
+import Meditation from './pages/Meditation.jsx'
 import Help from './pages/Help.jsx'
 import Safety from './pages/Safety.jsx'
 import Wellbeing from './pages/Wellbeing.jsx'
@@ -31,6 +32,7 @@ export default function App() {
         <Route path="/pathway" element={<Pathway />} />
         <Route path="/actions" element={<Actions />} />
         <Route path="/breathing" element={<Breathing />} />
+        <Route path="/meditasi" element={<Meditation />} />
         <Route path="/help" element={<Help />} />
         <Route path="/safety" element={<Safety />} />
         <Route path="/jurnal" element={<Wellbeing />} />
